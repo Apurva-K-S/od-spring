@@ -19,22 +19,22 @@
           MYSQL_USER: 'chandanteja'
           MYSQL_PASSWORD: '@2B2c2d2'
         networks:
-          - name: orgdon
+          - name: NETWORK
             ipv4_address: "192.168.3.22"
       
     - name: Create back-end container
       docker_container: 
         name: springboot-con1
-        image: apurvaks/organdonation-spring
+        image: chandan321/organdonation-spring
         ports:
           - "9098:9098"
         networks:
-          - name: orgdon
+          - name: NETWORK
       
     - name: Create front-end container
       docker_container:
         name: angular-con1
-        image: apurvaks/organdonation-angular
+        image: chandan321/organdonation-angular
         ports:
           - "80:80"
 
